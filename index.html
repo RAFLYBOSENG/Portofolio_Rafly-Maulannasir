@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive space-themed portfolio CV for Rafly Maulannasir, Web and Machine Learning Developer.">
+  <title>Rafly Maulannasir | Space Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="aurora aurora-one" aria-hidden="true"></div>
+  <div class="aurora aurora-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Rafly Maulannasir home">
+      <span class="brand-mark">RM</span>
+      <span>Rafly Maulannasir</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="status-line"><span></span> Available for world-class digital missions</p>
+        <h1>Rafly Maulannasir</h1>
+        <p class="hero-role">Web & Machine Learning Developer</p>
+        <p class="hero-text">
+          I build professional web experiences, intelligent systems, game-ready concepts, AI imagery workflows, and live creative technology with a mission-control mindset.
+        </p>
+        <div class="hero-actions" aria-label="Portfolio actions">
+          <a class="btn btn-primary" href="#projects">View Missions</a>
+          <a class="btn btn-secondary" href="#contact">Open Transmission</a>
+        </div>
+        <div class="role-cloud" aria-label="Capabilities">
+          <span>IT Engineer</span>
+          <span>Game Developer</span>
+          <span>AI Imagery</span>
+          <span>Vibe Coding</span>
+          <span>Game Streamer</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Animated space portfolio visual">
+        <div class="orbit-system">
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="orbit orbit-c"></div>
+          <div class="planet">
+            <div class="planet-shine"></div>
+            <div class="planet-grid"></div>
+          </div>
+          <div class="satellite satellite-one"></div>
+          <div class="satellite satellite-two"></div>
+          <div class="mission-panel">
+            <span>Signal</span>
+            <strong>99.8%</strong>
+            <small>Client trust uplink stable</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics reveal" aria-label="Professional highlights">
+      <article>
+        <strong data-count="6">0</strong>
+        <span>Skill Domains</span>
+      </article>
+      <article>
+        <strong data-count="24">0</strong>
+        <span>Hour Builder Energy</span>
+      </article>
+      <article>
+        <strong data-count="100">0</strong>
+        <span>Future Ready Mindset</span>
+      </article>
+    </section>
+
+    <section class="section skill-stack-section reveal">
+      <div class="skill-stack-header">
+        <p class="section-kicker">Skill Stack</p>
+        <h2>Rotating Skills Orbit</h2>
+      </div>
+      <div class="skill-orbit-container">
+        <div class="orbit-system-skill">
+          <!-- Center display -->
+          <div class="skill-center-display">
+            <div class="skill-display-content">
+              <div class="display-icon">🎨</div>
+              <h3 class="display-name">Graphic Design</h3>
+              <div class="display-percentage">92%</div>
+            </div>
+          </div>
+          
+          <!-- Orbiting skills -->
+          <div class="skill-orbit skill-orbit-1"></div>
+          <div class="skill-orbit skill-orbit-2"></div>
+          <div class="skill-orbit skill-orbit-3"></div>
+          
+          <!-- Skill cards around orbit -->
+          <div class="skill-orbital-card" data-position="0" data-skill="Graphic Design" data-percentage="92" data-icon="🎨">
+            <div class="card-content">
+              <div class="orbital-icon">🎨</div>
+              <p class="orbital-skill-name">Graphic Design</p>
+              <span class="orbital-percentage">92%</span>
+            </div>
+          </div>
+          <div class="skill-orbital-card" data-position="1" data-skill="Video Editing" data-percentage="93" data-icon="🎬">
+            <div class="card-content">
+              <div class="orbital-icon">🎬</div>
+              <p class="orbital-skill-name">Video Editing</p>
+              <span class="orbital-percentage">93%</span>
+            </div>
+          </div>
+          <div class="skill-orbital-card" data-position="2" data-skill="AI Imagery" data-percentage="90" data-icon="🤖">
+            <div class="card-content">
+              <div class="orbital-icon">🤖</div>
+              <p class="orbital-skill-name">AI Imagery</p>
+              <span class="orbital-percentage">90%</span>
+            </div>
+          </div>
+          <div class="skill-orbital-card" data-position="3" data-skill="Vibe Coding" data-percentage="85" data-icon="💻">
+            <div class="card-content">
+              <div class="orbital-icon">💻</div>
+              <p class="orbital-skill-name">Vibe Coding</p>
+              <span class="orbital-percentage">85%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="activity-indicator">
+        <span class="activity-text">Auto-rotating</span>
+        <!--<div class="activity-bars">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>-->
+      </div>
+    </section>
+
+    <section class="section split" id="about">
+      <div class="section-heading reveal">
+        <p class="section-kicker">About</p>
+        <h2>Engineer mindset, creator energy, global presentation.</h2>
+      </div>
+      <div class="about-panel reveal">
+        <p>
+          I am Rafly Maulannasir, focused on web and machine learning development. This portfolio is designed as a launchpad for real projects, client trust, and creative technical identity.
+        </p>
+        <p>
+          Replace this paragraph with your strongest story: what you build, who you help, your best achievements, and the technologies you use most confidently.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Expertise Systems</p>
+        <h2>Core modules for modern digital products.</h2>
+      </div>
+      <div class="expertise-grid">
+        <article class="system-card reveal">
+          <div class="card-icon">01</div>
+          <h3>Web Development</h3>
+          <p>Responsive interfaces, landing pages, dashboards, portfolio systems, and client-facing digital experiences.</p>
+        </article>
+        <article class="system-card reveal">
+          <div class="card-icon">02</div>
+          <h3>Machine Learning</h3>
+          <p>Model experimentation, data workflows, intelligent features, and practical AI product thinking.</p>
+        </article>
+        <article class="system-card reveal">
+          <div class="card-icon">03</div>
+          <h3>IT Engineering</h3>
+          <p>Technical troubleshooting, system setup, workflow support, and reliable operational problem solving.</p>
+        </article>
+        <article class="system-card reveal">
+          <div class="card-icon">04</div>
+          <h3>Game Development</h3>
+          <p>Interactive mechanics, gameplay concepts, game UI, and technical creativity for playable experiences.</p>
+        </article>
+        <article class="system-card reveal">
+          <div class="card-icon">05</div>
+          <h3>AI Imagery</h3>
+          <p>Visual ideation, AI-assisted assets, concept art direction, and image workflows for digital brands.</p>
+        </article>
+        <article class="system-card reveal">
+          <div class="card-icon">06</div>
+          <h3>Vibe Coding & Streaming</h3>
+          <p>Live building, rapid prototyping, audience-friendly demos, and gaming creator presence.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Mission Logs</p>
+        <h2>Featured projects ready for your real case studies.</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <span class="project-type">Web System</span>
+          <h3>Koperasi BLK Bandung</h3>
+          <p>Developed a web-based savings and loan management system for a local cooperative, improving financial accessibility and operational efficiency.</p>
+          <a href="https://koperasi-simpan-pinjam.up.railway.app" target="_blank">View Live</a>
+        </article>
+        <article class="project-card reveal">
+          <span class="project-type">AI / ML</span>
+          <h3>ML Ketersediaan Beras</h3>
+          <p>Developed a machine learning model to predict rice availability in Bandung regency, improving supply chain management.</p>
+          <a href="https://analisis-ketersediaan-beras-kab-bandung-production.up.railway.app/" target="_blank">View ML</a>
+        </article>
+        <article class="project-card reveal">
+          <span class="project-type">Game / Stream</span>
+          <h3>Project Name Three</h3>
+          <p>X</p>
+          <a href="#contact">Add showcase</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section timeline-section">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Trajectory</p>
+        <h2>A path built through code, systems, and creative experiments.</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span>Phase 01</span>
+          <h3>Foundation</h3>
+          <p>Web fundamentals, IT problem solving, and consistent technical practice.</p>
+        </article>
+        <article class="timeline-item reveal">
+          <span>Phase 02</span>
+          <h3>Expansion</h3>
+          <p>Machine learning, game concepts, and AI-assisted visual workflows.</p>
+        </article>
+        <article class="timeline-item reveal">
+          <span>Phase 03</span>
+          <h3>Broadcast</h3>
+          <p>Streaming, public demos, vibe coding, and portfolio-ready storytelling.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section creative-band">
+      <div class="creative-content reveal">
+        <p class="section-kicker">Creative Tech</p>
+        <h2>Code that can be watched, played, used, and trusted.</h2>
+        <p>
+          This section is for your game streaming identity, AI imagery experiments, behind-the-scenes builds, and public proof that you can communicate technical work clearly.
+        </p>
+      </div>
+      <div class="signal-stack reveal" aria-label="Creative technology signals">
+        <span>Live Build</span>
+        <span>AI Visual</span>
+        <span>Game Loop</span>
+        <span>Client Demo</span>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-panel reveal">
+        <p class="section-kicker">Transmission</p>
+        <h2>Ready to launch a project?</h2>
+        <p>Replace these placeholders with your real email, WhatsApp, GitHub, LinkedIn, Instagram, YouTube, or streaming links.</p>
+        <div class="contact-links">
+          <a href="mailto:raflymaulannasir@gmail.com">raflymaulannasir@gmail.com</a>
+          <a href="https://github.com/Raflymaulannasir" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/raflymaulannasir" target="_blank">LinkedIn</a>
+          <a href="https://tiktok.com/@raflyboseng" target="_blank">Streaming channel</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Rafly Maulannasir</span>
+    <span>Built for global digital missions.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
