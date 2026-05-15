@@ -29,10 +29,10 @@ const CV_DEFAULT_DATA = {
   keterampilan: {
     heading: "Skill Stack",
     items: [
-      { judul: "Graphic Design", deskripsi: "Visual composition, branding, layout, and presentation polish.", ikon: "🎨", persentase: 92 },
-      { judul: "Video Editing", deskripsi: "Short-form cuts, motion pacing, and clean narrative editing.", ikon: "🎬", persentase: 93 },
-      { judul: "AI Imagery", deskripsi: "Prompt-driven concepts and image workflows for digital brands.", ikon: "🤖", persentase: 90 },
-      { judul: "Vibe Coding", deskripsi: "Fast prototyping, UI iteration, and creative development loops.", ikon: "💻", persentase: 85 }
+      { judul: "Game Developer", deskripsi: "Visual composition, branding, layout, and presentation polish.", ikon: "🎮", persentase: 92 },
+      { judul: "AI Engineer", deskripsi: "Short-form cuts, motion pacing, and clean narrative editing.", ikon: "🤖", persentase: 93 },
+      { judul: "AI Imagery", deskripsi: "Prompt-driven concepts and image workflows for digital brands.", ikon: "🌆", persentase: 90 },
+      { judul: "Vibe Coding", deskripsi: "Fast prototyping, UI iteration, and creative development loops.", ikon: "💻", persentase: 95 }
     ]
   },
   pengalaman: {
