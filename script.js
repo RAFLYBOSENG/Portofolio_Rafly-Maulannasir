@@ -431,7 +431,6 @@ function setupSkillOrbitalCarousel() {
       // Add appropriate class based on position
       if (position === 0) {
         card.classList.add('active');
-        playSound('hover');
         // Update center display
         const skillIndex = index;
         if (skillsData[skillIndex]) {
