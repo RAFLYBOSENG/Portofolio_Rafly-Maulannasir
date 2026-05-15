@@ -16,7 +16,7 @@ const CV_DEFAULT_DATA = {
     name: "Rafly Maulannasir",
     role: "Web & Machine Learning Developer",
     location: "Bandung, Indonesia",
-    email: "your.email@example.com",
+    email: "raflymaulannasir@gmail.com",
     phone: "+62 812-3456-7890",
     website: "https://github.com/Raflymaulannasir",
     address: "Bandung, Jawa Barat",
@@ -431,7 +431,6 @@ function setupSkillOrbitalCarousel() {
       // Add appropriate class based on position
       if (position === 0) {
         card.classList.add('active');
-        playSound('hover');
         // Update center display
         const skillIndex = index;
         if (skillsData[skillIndex]) {
@@ -473,6 +472,7 @@ function setupSkillOrbitalCarousel() {
   // Click to rotate manually
   skillCards.forEach((card, index) => {
     card.addEventListener('click', () => {
+      playSound('click');
       clearInterval(rotationInterval);
       const position = (index - currentPosition + numSkills) % numSkills;
       const rotation = (numSkills - position) % numSkills;
