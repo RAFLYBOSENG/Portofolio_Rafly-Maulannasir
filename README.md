@@ -4,15 +4,7 @@ Interactive one-page portfolio CV with a space mission control theme.
 
 ## Open https://raflyboseng.github.io/Portofolio_Rafly-Maulannasir
 
-Open `[index.html](https://raflyboseng.github.io/Portofolio_Rafly-Maulannasir/)` directly in a browser.
-
-## Edit
-
-- Change name, profession, and section copy in `index.html`.
-- Replace placeholder project cards in the `Mission Logs` section.
-- Replace contact placeholders in the `Transmission` section.
-- Adjust colors, spacing, and animation style in `styles.css`.
-- Adjust starfield and interaction behavior in `script.js`.
+Open 'Portfolio' directly in a browser.
 
 ## Confirmed Content
 
