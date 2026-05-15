@@ -16,7 +16,11 @@ const CV_DEFAULT_DATA = {
     name: "Rafly Maulannasir",
     role: "Web & Machine Learning Developer",
     location: "Bandung, Indonesia",
+<<<<<<< HEAD
     email: "raflymaulannasir@gmail.com",
+=======
+    email: "raflymaulannasirkss@gmail.com",
+>>>>>>> ce6c1ac09e34bf78e0732d08cbe440355483b7e0
     phone: "+62 812-3456-7890",
     website: "https://github.com/Raflymaulannasir",
     address: "Bandung, Jawa Barat",
