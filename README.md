@@ -2,7 +2,7 @@
 
 Interactive one-page portfolio CV with a space mission control theme.
 
-## Open
+## Open https://raflyboseng.github.io/Portofolio_Rafly-Maulannasir
 
 Open `[index.html](https://raflyboseng.github.io/Portofolio_Rafly-Maulannasir/)` directly in a browser.
 
