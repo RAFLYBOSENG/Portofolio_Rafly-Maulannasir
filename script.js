@@ -16,7 +16,7 @@ const CV_DEFAULT_DATA = {
     name: "Rafly Maulannasir",
     role: "Web & Machine Learning Developer",
     location: "Bandung, Indonesia",
-    email: "your.email@example.com",
+    email: "raflymaulannasirkss@gmail.com",
     phone: "+62 812-3456-7890",
     website: "https://github.com/Raflymaulannasir",
     address: "Bandung, Jawa Barat",
