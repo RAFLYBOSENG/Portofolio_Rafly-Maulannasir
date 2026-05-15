@@ -29,10 +29,10 @@ const CV_DEFAULT_DATA = {
   keterampilan: {
     heading: "Skill Stack",
     items: [
-      { judul: "Graphic Design", deskripsi: "Visual composition, branding, layout, and presentation polish.", ikon: "🎨", persentase: 92 },
-      { judul: "Video Editing", deskripsi: "Short-form cuts, motion pacing, and clean narrative editing.", ikon: "🎬", persentase: 93 },
-      { judul: "AI Imagery", deskripsi: "Prompt-driven concepts and image workflows for digital brands.", ikon: "🤖", persentase: 90 },
-      { judul: "Vibe Coding", deskripsi: "Fast prototyping, UI iteration, and creative development loops.", ikon: "💻", persentase: 85 }
+      { judul: "Game Developer", deskripsi: "Visual composition, branding, layout, and presentation polish.", ikon: "🎮", persentase: 92 },
+      { judul: "AI Engineer", deskripsi: "Short-form cuts, motion pacing, and clean narrative editing.", ikon: "🤖", persentase: 93 },
+      { judul: "AI Imagery", deskripsi: "Prompt-driven concepts and image workflows for digital brands.", ikon: "🌆", persentase: 90 },
+      { judul: "Vibe Coding", deskripsi: "Fast prototyping, UI iteration, and creative development loops.", ikon: "💻", persentase: 95 }
     ]
   },
   pengalaman: {
@@ -59,17 +59,17 @@ const CV_DEFAULT_DATA = {
     heading: "Transmission",
     intro: "Replace these placeholders with your real email, WhatsApp, GitHub, LinkedIn, Instagram, YouTube, or streaming links.",
     items: [
-      { label: "Email", nilai: "your.email@example.com", link: "mailto:your.email@example.com" },
+      { label: "Email", nilai: "your.raflymaulannasirkk@gmail.com", link: "mailto:your.raflymaulannasirkk@gmail.com" },
       { label: "GitHub", nilai: "github.com/Raflymaulannasir", link: "https://github.com/Raflymaulannasir" },
       { label: "LinkedIn", nilai: "linkedin.com/in/raflymaulannasir", link: "https://linkedin.com/in/raflymaulannasir" },
       { label: "Streaming", nilai: "tiktok.com/@raflyboseng", link: "https://tiktok.com/@raflyboseng" }
     ]
   },
   skillOrbit: [
-    { name: "Graphic Design", percentage: 92, icon: "🎨" },
-    { name: "Video Editing", percentage: 93, icon: "🎬" },
-    { name: "AI Imagery", percentage: 90, icon: "🤖" },
-    { name: "Vibe Coding", percentage: 85, icon: "💻" }
+    { name: "Game Developer", percentage: 92, icon: "🎮" },
+    { name: "AI Engineer", percentage: 93, icon: "🤖" },
+    { name: "AI Imagery", percentage: 90, icon: "🌆" },
+    { name: "Vibe Coding", percentage: 95, icon: "💻" }
   ]
 };
 
@@ -381,22 +381,58 @@ function playSound(type = 'hover') {
     oscillator.start(now);
     oscillator.stop(now + 0.15);
   } else if (type === 'click') {
-    // Rocket launch sound
+    // Space click: soft sci-fi pulse with a quick rising shimmer
     const now = audioContext.currentTime;
-    const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
-    
-    oscillator.connect(gainNode);
+    const filter = audioContext.createBiquadFilter();
+    const oscA = audioContext.createOscillator();
+    const oscB = audioContext.createOscillator();
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(900, now);
+    filter.frequency.exponentialRampToValueAtTime(1800, now + 0.18);
+
+    oscA.type = 'triangle';
+    oscB.type = 'sine';
+    oscA.frequency.setValueAtTime(180, now);
+    oscA.frequency.exponentialRampToValueAtTime(520, now + 0.22);
+    oscB.frequency.setValueAtTime(360, now);
+    oscB.frequency.exponentialRampToValueAtTime(720, now + 0.22);
+    oscB.detune.setValueAtTime(-8, now);
+    oscB.detune.exponentialRampToValueAtTime(8, now + 0.22);
+
+    gainNode.gain.setValueAtTime(0.0001, now);
+    gainNode.gain.exponentialRampToValueAtTime(0.22, now + 0.03);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.24);
+
+    oscA.connect(filter);
+    oscB.connect(filter);
+    filter.connect(gainNode);
     gainNode.connect(audioContext.destination);
-    
-    oscillator.frequency.setValueAtTime(200, now);
-    oscillator.frequency.exponentialRampToValueAtTime(400, now + 0.3);
-    gainNode.gain.setValueAtTime(0.4, now);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-    
-    oscillator.start(now);
-    oscillator.stop(now + 0.3);
+
+    oscA.start(now);
+    oscB.start(now);
+    oscA.stop(now + 0.24);
+    oscB.stop(now + 0.24);
   }
+}
+
+function setupGlobalClickSound() {
+  const clickableSelector = [
+    'a',
+    'button',
+    'input',
+    'textarea',
+    'select',
+    '[role="button"]',
+    '.skill-orbital-card'
+  ].join(', ');
+
+  document.addEventListener('click', (event) => {
+    const target = event.target.closest(clickableSelector);
+    if (!target) return;
+    playSound('click');
+  }, { passive: true });
 }
 
 // Setup Skill Orbital Carousel
@@ -504,3 +540,4 @@ setupCounters();
 setupNavigation();
 setupSkillOrbitalCarousel();
 setupActivityBars();
+setupGlobalClickSound();
