@@ -20,11 +20,15 @@
       <span class="brand-mark">RM</span>
       <span>Rafly Maulannasir</span>
     </a>
+    <div class="lang-switch" aria-label="Language selector">
+      <button id="lang-en" class="lang-btn" aria-pressed="false">EN</button>
+      <button id="lang-id" class="lang-btn" aria-pressed="false">ID</button>
+    </div>
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
   </header>
 
@@ -33,13 +37,11 @@
       <div class="hero-copy reveal">
         <p class="status-line"><span></span> Available for world-class digital missions</p>
         <h1>Rafly Maulannasir</h1>
-        <p class="hero-role">Web & Machine Learning Developer</p>
-        <p class="hero-text">
-          I build professional web experiences, intelligent systems, game-ready concepts, AI imagery workflows, and live creative technology with a mission-control mindset.
-        </p>
+        <p class="hero-role" data-i18n="hero.role">Web & Machine Learning Developer</p>
+        <p class="hero-text" data-i18n="hero.text">I build professional web experiences, intelligent systems, game-ready concepts, AI imagery workflows, and live creative technology with a mission-control mindset.</p>
         <div class="hero-actions" aria-label="Portfolio actions">
-          <a class="btn btn-primary" href="#projects">View Missions</a>
-          <a class="btn btn-secondary" href="#contact">Open Transmission</a>
+          <a class="btn btn-primary" href="#projects" data-i18n="hero.viewMissions">View Missions</a>
+          <a class="btn btn-secondary" href="#contact" data-i18n="hero.openTransmission">Open Transmission</a>
         </div>
         <div class="role-cloud" aria-label="Capabilities">
           <span>IT Engineer</span>
@@ -280,11 +282,12 @@
     </section>
 
     <section class="section contact-section" id="contact">
+      <div class="section-heading reveal">
+          <h2 data-i18n="contact.heading">Let's build your next project together.</h2>
       <div class="contact-panel contact-panel-split reveal">
-        <div class="contact-intro">
-          <p class="section-kicker">Get in Touch</p>
-          <h2>Ada Project? Let's Talk.</h2>
-          <p>Mau bikin konten yang keren, desain yang eye-catching, atau butuh solusi web dan AI? Yuk ngobrol, aku siap bantu wujudkan idemu!</p>
+        <div class="contact-intro"> 
+           <p class="section-kicker" data-i18n="contact.kicker">Contact Me</p>
+           <p data-i18n="contact.intro">Silakan hubungi saya jika Anda ingin membuat website atau aplikasi. Saya siap membantu mewujudkan ide Anda.</p>
           <div class="contact-links contact-links-stack">
             <a href="mailto:raflymaulannasir@gmail.com">
               <span class="contact-emoji">✉</span>
@@ -304,32 +307,32 @@
             </a>
           </div>
         </div>
-        <form class="contact-form">
-          <label>
-            <span>Nama</span>
-            <input type="text" name="name" placeholder="Nama kamu">
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="email@kamu.com">
-          </label>
-          <label>
-            <span>Jenis Proyek</span>
-            <input type="text" name="projectType" placeholder="Graphic Design / Video / AI / Web...">
-          </label>
-          <label>
-            <span>Ceritain Proyekmu</span>
-            <textarea name="message" rows="5" placeholder="Brief singkat tentang kebutuhan kamu..."></textarea>
-          </label>
-          <button type="submit" class="contact-submit">Kirim Pesan ✉</button>
+        <form class="contact-form" action="https://formspree.io/f/mbdblvlv" method="POST" target="_blank" rel="noopener">
+            <label>
+              <span data-i18n="form.name">Nama</span>
+              <input type="text" name="name" placeholder="Nama kamu" data-i18n-placeholder="form.placeholder.name">
+            </label>
+            <label>
+              <span data-i18n="form.email">Email</span>
+              <input type="email" name="_replyto" placeholder="email@kamu.com" data-i18n-placeholder="form.placeholder.email">
+            </label>
+            <label>
+              <span data-i18n="form.projectType">Jenis Proyek</span>
+              <input type="text" name="projectType" placeholder="Graphic Design / Video / AI / Web..." data-i18n-placeholder="form.placeholder.projectType">
+            </label>
+            <label>
+              <span data-i18n="form.message">Ceritain Proyekmu</span>
+              <textarea name="message" rows="5" placeholder="Brief singkat tentang kebutuhan kamu..." data-i18n-placeholder="form.placeholder.message"></textarea>
+            </label>
+            <button type="submit" class="contact-submit" data-i18n="form.submit">Kirim Pesan ✉</button>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>Rafly Maulannasir</span>
-    <span>Built for global digital missions.</span>
+    <span data-i18n="footer.name">Rafly Maulannasir</span>
+    <span data-i18n="footer.tagline">Built for global digital missions.</span>
   </footer>
 
   <script src="script.js"></script>

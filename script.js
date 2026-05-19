@@ -56,10 +56,10 @@ const CV_DEFAULT_DATA = {
     items: []
   },
   kontak: {
-    heading: "Transmission",
-    intro: "Replace these placeholders with your real email, WhatsApp, GitHub, LinkedIn, Instagram, YouTube, or streaming links.",
+    heading: "Contact",
+    intro: "Silakan hubungi saya jika Anda ingin membuat website atau aplikasi. Saya siap membantu mewujudkan ide Anda.",
     items: [
-      { label: "Email", nilai: "your.raflymaulannasirkk@gmail.com", link: "mailto:your.raflymaulannasirkk@gmail.com" },
+      { label: "Email", nilai: "raflymaulannasirkk@gmail.com", link: "mailto:raflymaulannasirkk@gmail.com" },
       { label: "GitHub", nilai: "github.com/Raflymaulannasir", link: "https://github.com/Raflymaulannasir" },
       { label: "LinkedIn", nilai: "linkedin.com/in/raflymaulannasir", link: "https://linkedin.com/in/raflymaulannasir" },
       { label: "Streaming", nilai: "tiktok.com/@raflyboseng", link: "https://tiktok.com/@raflyboseng" }
@@ -201,8 +201,15 @@ function renderCVData(data) {
   const contactHeading = contactPanel?.querySelector("h2");
   const contactIntro = contactPanel?.querySelector("p:not(.section-kicker)");
   const contactLinks = document.querySelector(".contact-links");
-  if (contactHeading) contactHeading.textContent = data.kontak?.heading || CV_DEFAULT_DATA.kontak.heading;
-  if (contactIntro) contactIntro.textContent = data.kontak?.intro || CV_DEFAULT_DATA.kontak.intro;
+  if (contactHeading) {
+    contactHeading.textContent = data.kontak?.heading && data.kontak.heading !== "Transmission"
+      ? data.kontak.heading
+      : "Ada Project? Let's Talk.";
+  }
+  const contactIntroText = data.kontak?.intro && !data.kontak.intro.includes("Replace these placeholders")
+    ? data.kontak.intro
+    : CV_DEFAULT_DATA.kontak.intro;
+  if (contactIntro) contactIntro.textContent = contactIntroText;
 
   if (contactLinks) {
     contactLinks.innerHTML = "";
@@ -541,3 +548,86 @@ setupNavigation();
 setupSkillOrbitalCarousel();
 setupActivityBars();
 setupGlobalClickSound();
+
+// --- Simple i18n support (EN / ID) ---------------------------------
+const TRANSLATIONS = {
+  en: {
+    'nav.about': 'About',
+    'nav.expertise': 'Expertise',
+    'nav.projects': 'Projects',
+    'nav.contact': 'Contact',
+    'hero.role': 'Web & Machine Learning Developer',
+    'hero.text': 'I build professional web experiences, intelligent systems, game-ready concepts, AI imagery workflows, and live creative technology with a mission-control mindset.',
+    'hero.viewMissions': 'View Missions',
+    'hero.openTransmission': 'Open Transmission',
+    'contact.kicker': 'Get in Touch',
+    'contact.heading': "Let's build your next project together.",
+    'contact.intro': 'If you have a project idea—website, app, or visual—get in touch and let\'s make it happen.',
+    'form.name': 'Name',
+    'form.email': 'Email',
+    'form.projectType': 'Project Type',
+    'form.message': 'Tell me about your project',
+    'form.submit': 'Send Message',
+    'form.placeholder.name': 'Your name',
+    'form.placeholder.email': 'email@you.com',
+    'form.placeholder.projectType': 'Graphic Design / Video / AI / Web...',
+    'form.placeholder.message': 'Brief description of your needs...',
+    'footer.tagline': 'Built for global digital missions.'
+  },
+  id: {
+    'nav.about': 'Tentang',
+    'nav.expertise': 'Keahlian',
+    'nav.projects': 'Proyek',
+    'nav.contact': 'Kontak',
+    'hero.role': 'Pengembang Web & Machine Learning',
+    'hero.text': 'Saya membangun pengalaman web profesional, sistem cerdas, konsep siap main, alur kerja gambar AI, dan teknologi kreatif yang siap produksi.',
+    'hero.viewMissions': 'Lihat Proyek',
+    'hero.openTransmission': 'Kontak',
+    'contact.kicker': 'Hubungi',
+    'contact.heading': 'Mari wujudkan proyek Anda bersama.',
+    'contact.intro': 'Silakan hubungi saya jika Anda ingin membuat website atau aplikasi. Saya siap membantu mewujudkan ide Anda.',
+    'form.name': 'Nama',
+    'form.email': 'Email',
+    'form.projectType': 'Jenis Proyek',
+    'form.message': 'Ceritakan proyekmu',
+    'form.submit': 'Kirim Pesan',
+    'form.placeholder.name': 'Nama kamu',
+    'form.placeholder.email': 'email@kamu.com',
+    'form.placeholder.projectType': 'Graphic Design / Video / AI / Web...',
+    'form.placeholder.message': 'Brief singkat tentang kebutuhan kamu...',
+    'footer.tagline': 'Dibuat untuk misi digital global.'
+  }
+};
+
+function applyTranslations(lang) {
+  const dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (key && dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (key && dict[key]) el.placeholder = dict[key];
+  });
+  // mark active button
+  document.getElementById('lang-en')?.classList.toggle('active', lang === 'en');
+  document.getElementById('lang-id')?.classList.toggle('active', lang === 'id');
+  document.documentElement.lang = lang === 'id' ? 'id' : 'en';
+}
+
+function initLanguage() {
+  const stored = localStorage.getItem('siteLang') || (navigator.language && navigator.language.startsWith('id') ? 'id' : 'en');
+  applyTranslations(stored);
+  document.getElementById('lang-en')?.addEventListener('click', () => {
+    localStorage.setItem('siteLang', 'en');
+    applyTranslations('en');
+  });
+  document.getElementById('lang-id')?.addEventListener('click', () => {
+    localStorage.setItem('siteLang', 'id');
+    applyTranslations('id');
+  });
+}
+
+initLanguage();
+
+// ------------------------------------------------------------------
