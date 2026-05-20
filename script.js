@@ -16,7 +16,7 @@ const CV_DEFAULT_DATA = {
     name: "Rafly Maulannasir",
     role: "Web & Machine Learning Developer",
     location: "Bandung, Indonesia",
-    email: "raflymaulannasir@gmail.com",
+    email: "raflymaulannasirkss@gmail.com",
     phone: "+62 812-3456-7890",
     website: "https://github.com/Raflymaulannasir",
     address: "Bandung, Jawa Barat",
@@ -59,7 +59,7 @@ const CV_DEFAULT_DATA = {
     heading: "Contact",
     intro: "Silakan hubungi saya jika Anda ingin membuat website atau aplikasi. Saya siap membantu mewujudkan ide Anda.",
     items: [
-      { label: "Email", nilai: "raflymaulannasirkk@gmail.com", link: "mailto:raflymaulannasirkk@gmail.com" },
+      { label: "Email", nilai: "raflymaulannasirkss@gmail.com", link: "mailto:raflymaulannasirkss@gmail.com" },
       { label: "GitHub", nilai: "github.com/Raflymaulannasir", link: "https://github.com/Raflymaulannasir" },
       { label: "LinkedIn", nilai: "linkedin.com/in/raflymaulannasir", link: "https://linkedin.com/in/raflymaulannasir" },
       { label: "Streaming", nilai: "tiktok.com/@raflyboseng", link: "https://tiktok.com/@raflyboseng" }
